@@ -321,8 +321,22 @@ footer {
         font-size: 2rem;
     }
 
-    /* mobile: cap image height to keep cards compact */
+    /* mobile: make images fluid while preserving aspect ratio so they fit phones */
     .product-card img {
-        height: 140px;
+        width: 100%;
+        height: auto;
+        /* let height follow width */
+        aspect-ratio: 4 / 3;
+        /* keep consistent shape */
+        object-fit: cover;
+        max-height: 160px;
+        /* keep cards compact on small screens */
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 1.5rem;
     }
 }
